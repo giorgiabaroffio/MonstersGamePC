@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>My first Three.js app</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script type="text/javascript" src="js/jsc3d.js"></script>
+		<script type="text/javascript" src="js/jsc3d.touch.js"></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+		<script src='js/jquery.js'></script>
+		
+		<script type="text/javascript">
+		
+			var correctAnsw; // is settet in global.js
+			/*
+			function checkPressed(value){
+				for(var i=1; i<5; i++){
+					if(i==value){
+						var box = document.getElementById('test'+value.toString());
+						box.checked=true;
+					}
+					else {
+					var box = document.getElementById('test'+(i).toString());
+					box.checked=false;
+					}						
+				}
+			}
+			*/
+			function checkAnswer(){
+				/*
+				for(var i=1; i<5; i++){
+					var box = document.getElementById('test'+i.toString());
+					if(box.checked==true){
+						var labelText = getLabelText(box.id);
+						if(labelText == correctAnsw) alert('Correct Answer');
+						else alert('Uncorrect Answer, the correct is: ' + correctAnsw);
+						
+					}
+				}
+				*/
+				
+				var checkedValue = $('input[name=answer]').filter(':checked').val();
+				if(checkedValue==undefined){
+					alert("Select one answer");
+				}
+				else
+				{
+					if(checkedValue==correctAnsw.toString()){
+						alert("Correct Answer");
+					}
+					else{
+						alert("Uncorrect Answer");
+					}
+				}
+			}
+			
+			/*
+			function getLabelText(needle) {
+				var labels = document.getElementsByTagName("label");
+				var texts = [] ;
+				for (var i = 0; i < labels.length; i++) {
+					var label = labels[i];
+					if(label.getAttribute("for") == needle) {
+						texts.push(label.innerHTML);
+					} 
+				}
+				return texts;
+			}
+			*/
+			
+			function getParameter(name){
+				name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+				var regexS = "[\\?&]"+name+"=([^&#]*)";
+				var regex = new RegExp( regexS );
+				var results = regex.exec( window.location.href );
+				if( results == null )
+					return null;
+				else
+					return results[1];
+				}
+			
+		</script>
+	</head>
+	<body style="background-color: '#C0C0C0';">
+		
+		<script>
+			var monster = getParameter("qrString");
+		</script>
+			
+		<div id='gameArea'>
+		
+		<canvas id='gameCanvas' style = "width: 100%; height:250px"></canvas>
+		
+		  <script>
+			  var viewer = new JSC3D.Viewer(document.getElementById('gameCanvas'));	// canvas to import the model
+			  var modelSrc = 'model/Dragon/Dragon.obj'; 	//default
+			  if(monster == "Dragon") modelSrc = 'model/Dragon/Dragon.obj';
+			  if(monster == "Minotaur") modelSrc = 'model/Bullman(Tauren)/Minotaur.obj';
+			  
+			  viewer.setParameter('SceneUrl',         modelSrc);
+			  viewer.setParameter('ModelColor',       '#00b8ff');
+			  viewer.setParameter('BackgroundColor1', '#112613');
+			  viewer.setParameter('RenderMode',       'flat');
+			  viewer.setParameter('Definition', 'high');
+		
+			  viewer.init();
+			  viewer.update();
+		  </script>
+
+				
+		
+		<div id='questionArea'>
+		
+		<p class="lead" id="question" style='padding-left: 10px; font-size: 150%' f>What's the capital of Britain?</p>
+		
+		<!--dinamically add checkboxes, according to the number of available answers -->
+		
+		<!--
+		<div class="row">
+			<input type="checkbox" id="test1" onchange="checkPressed(1);" /> <label for="test1"></label>	
+		</div></br>
+		<div class="row">
+			<input type="checkbox" id="test2" onchange="checkPressed(2);" /> <label for="test2"></label>	
+		</div></br>
+		<div class="row">
+			<input type="checkbox" id="test3" onchange="checkPressed(3);"/> <label for="test3"></label>	
+		</div></br>
+		<div class="row">
+			<input type="checkbox" id="test4" onchange="checkPressed(4);"/> <label for="test4"></label>	
+		</div></br>
+		-->
+		<div id='answersArea'>
+		</div>
+		<input type='button' onclick="checkAnswer()" value='check'>
+		</div>
+		
+		<script src='js/global.js'></script>
+		
+		</div>
+		
+	</body>
+
+</html>

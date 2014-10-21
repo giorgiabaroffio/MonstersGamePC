@@ -1,0 +1,25 @@
+{
+    "name": "SmartH2OGame"
+  , "version": "0.0.1"
+  , "private": true
+  , "author" : {
+      "name" : "Giorgia Baroffio"
+    , "email" : "giorgia.baroffio@gmail.com"
+  }
+  , "dependencies": {
+      "express": "4.x"
+    , "connect" : "*"
+    , "body-parser": "*"
+    , "method-override": "*"
+    , "errorhandler": "*"
+    , "mongoose": "*"
+    , "mongoose-auto-increment": "*"
+    , "cli-color" : "*"
+    , "underscore-node" : "*"
+    , "async" : "*"
+    , "image-size": "*"
+    , "is-jpg": "*"
+    , "is-png": "*"
+    , "valid-url": "*"
+  }
+}

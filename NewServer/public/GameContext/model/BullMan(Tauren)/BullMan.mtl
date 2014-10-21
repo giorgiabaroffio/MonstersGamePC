@@ -1,0 +1,61 @@
+# Blender MTL File: 'Official.blend'
+# Material Count: 6
+
+newmtl MatBulmanEye
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.798198 0.035266
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Bullman(Tauren)/Eye_0.jpg
+map_Ks Bullman(Tauren)/EyeMask.jpg
+
+newmtl None
+Ns 0
+Ka 0.000000 0.000000 0.000000
+Kd 0.8 0.8 0.8
+Ks 0.8 0.8 0.8
+d 1
+illum 2
+
+newmtl matBullMan
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.096991 0.096991 0.096991
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Bullman(Tauren)/TaurenMaleSkin00_15 - Other copy.bmp
+
+newmtl matBullMan_TaurenMaleSkin
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.096991 0.096991 0.096991
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Bullman(Tauren)/TaurenMaleSkin.bmp
+
+newmtl matBullMan_TaurenMaleSkin00_15o.png
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.096991 0.096991 0.096991
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Bullman(Tauren)/tex/TaurenMaleSkin00_15 - Other copy.bmp
+
+newmtl matBullmanTongue
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.278328 0.252857
+Ks 0.100000 0.100000 0.100000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Bullman(Tauren)/tongue_diffuse.png

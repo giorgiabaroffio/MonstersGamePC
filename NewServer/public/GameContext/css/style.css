@@ -1,0 +1,95 @@
+/* Base for label styling */
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relative;
+  padding-left: 100px;	/* Label Text Position*/
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:20px; top: 2px;	/*checkbox padding*/
+  width: 30px; height: 30px;	/*checkbox size*/
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+/* checked mark aspect */
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:after {
+  content: 'X';
+  position: absolute;
+  top: 0px; left: 25px;	/* X position*/
+  font-size: 25px;			/* X size*/
+  color: #09ad7e;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="radio"]:disabled:not(:checked) + label:before,
+[type="radio"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="radio"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="radio"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="radio"]:checked:focus + label:before,
+[type="radio"]:not(:checked):focus + label:before {
+  border: 1px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+
+
+
+
+
+.copy a {
+ text-decoration: none;
+ color: #4778d9;
+}
+
+
+
+#gameArea {
+  width:      100%;
+  height:     100%;
+}
+
+#gameCanvas {
+  position: inherit;
+  width: 200px;
+  height: 200px;
+}
+
+#questionArea {
+	position: relative;
+	width: 100%;
+	height: 70%;
+}
